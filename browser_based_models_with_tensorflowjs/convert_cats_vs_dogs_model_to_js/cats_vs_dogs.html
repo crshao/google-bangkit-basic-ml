@@ -1,0 +1,24 @@
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>   
+</head>
+<body>
+    <img id="img" src="cat1.jpg"></img>
+    <div id="output" style="font-family:courier;font-size:24px;height:300px"></div>
+</body>
+<script>
+    async function run(){
+        const MODEL_URL = 'http://127.0.0.1:8887/model.json';
+        const model = await tf.loadLayersModel(MODEL_URL);
+        console.log(model.summary());
+
+        const img = document.getElementById('img');
+        const outp = document.getElementById('output');
+        // const input = tf.tensor2d([10.0], [1,1]);
+        // const result = model.predict(input);
+        // alert(result)
+	}
+	run();
+</script>
+
+</html>
